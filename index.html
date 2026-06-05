@@ -890,6 +890,18 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
 }
 .mobile-menu-contact a { font-family: var(--f-mono) !important; font-size: 11px !important; letter-spacing: .12em !important; color: var(--c-muted) !important; padding: 0 !important; animation: none !important; opacity: 1 !important; transform: none !important; }
 .mobile-menu-contact a:hover { color: var(--c-accent) !important; }
+.mobile-menu-close {
+  position: fixed; top: 16px; right: 16px; z-index: 1003;
+  width: 46px; height: 46px; display: none; padding: 0;
+  align-items: center; justify-content: center;
+  border: 1px solid var(--c-border); border-radius: 3px;
+  background: rgba(6,19,16,.55); color: var(--c-accent);
+  font-family: var(--f-body); font-size: 32px; line-height: 1; cursor: pointer;
+  transition: border-color .25s, color .25s, background .25s, transform .25s;
+}
+.mobile-menu-close:hover { border-color: var(--c-accent); color: var(--c-text); transform: rotate(90deg); }
+body.menu-open .mobile-menu-close { display: flex; }
+body.menu-open .nav-toggle { opacity: 0; pointer-events: none; }
 
 /* Section-title gold hairline that draws in on reveal */
 .section-title { padding-top: 18px; }
@@ -1158,6 +1170,7 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Меню">
+  <button class="mobile-menu-close" id="menuClose" type="button" aria-label="Закрыть меню" data-i18n-skip>&times;</button>
   <a href="#services"><span class="mm-num">01</span>Услуги</a>
   <a href="#price"><span class="mm-num">02</span>Прайс</a>
   <a href="#rider"><span class="mm-num">03</span>Райдер</a>
@@ -2172,6 +2185,8 @@ function setMenu(open){
 }
 if (navToggle && mobileMenu){
   navToggle.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+  const menuClose = document.getElementById('menuClose');
+  if (menuClose) menuClose.addEventListener('click', () => setMenu(false));
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) setMenu(false); });
   window.addEventListener('resize', () => { if (window.innerWidth > 1100 && document.body.classList.contains('menu-open')) setMenu(false); });
