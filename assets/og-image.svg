@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="GRAVIX Barber — Астана">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C4439"/>
+      <stop offset="1" stop-color="#052E27"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="50%" cy="32%" r="80%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.42"/>
+    </radialGradient>
+    <pattern id="needles" width="120" height="120" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+      <polygon points="60,30 66,60 60,60 54,60" fill="#C49C5E" opacity="0.16"/>
+      <polygon points="60,90 66,60 60,60 54,60" fill="#E3DED4" opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#needles)"/>
+  <rect width="1200" height="630" fill="url(#vig)"/>
+
+  <!-- top eyebrow -->
+  <g transform="translate(90,118)">
+    <rect x="0" y="-5" width="48" height="3" fill="#C49C5E"/>
+    <text x="66" y="0" font-family="'DM Mono',ui-monospace,monospace" font-size="22" letter-spacing="7" fill="#C49C5E">GRAVIX BARBER · АСТАНА</text>
+  </g>
+
+  <!-- wordmark -->
+  <text x="86" y="320" font-family="'Bebas Neue','Arial Narrow',Impact,sans-serif" font-weight="700" font-size="200" letter-spacing="6" fill="#F0F0E8">GRAVI<tspan fill="#F0F0E8">X</tspan></text>
+  <!-- signature needle as the dot over the wordmark crossbar -->
+  <g transform="translate(1040,250)">
+    <polygon points="0,-58 17,0 0,0 -17,0" fill="#C49C5E"/>
+    <polygon points="0,58 17,0 0,0 -17,0" fill="#E3DED4" opacity="0.5"/>
+  </g>
+
+  <!-- tagline -->
+  <text x="90" y="420" font-family="'Tenor Sans',Georgia,serif" font-size="42" fill="#E3DED4">Барбершоп, который помнит всё.</text>
+
+  <!-- bottom row: rating + url -->
+  <g transform="translate(90,520)">
+    <text x="0" y="0" font-family="Arial,sans-serif" font-size="34" fill="#C49C5E" letter-spacing="4">★★★★★</text>
+    <text x="200" y="0" font-family="'DM Mono',ui-monospace,monospace" font-size="26" fill="#7FA294" letter-spacing="2">4.9 · 540+ отзывов</text>
+  </g>
+  <text x="1110" y="520" text-anchor="end" font-family="'DM Mono',ui-monospace,monospace" font-size="26" fill="#C49C5E" letter-spacing="3">gravixbarber.kz</text>
+
+  <rect x="90" y="560" width="1020" height="2" fill="#1E5749"/>
+  <text x="90" y="600" font-family="'DM Mono',ui-monospace,monospace" font-size="20" fill="#7FA294" letter-spacing="3">пл. Республики 15 · онлайн-запись · гравиксы · ваш райдер</text>
+</svg>
