@@ -1007,6 +1007,36 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
 .ai-soon { display: inline-block; margin-top: 12px; font-family: var(--f-mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--c-accent); border: 1px solid rgba(196,156,94,.4); padding: 5px 11px; border-radius: 3px; }
 @media (max-width: 900px) { .ai-grid { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .ai-features { grid-template-columns: 1fr; } }
+/* AI reveal controls (try-on + stylist) */
+.tryon-grp-label, .so-grp-label, .so-label, .ce-label { font-family: var(--f-mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--c-muted); }
+.tryon-grp-label { display: block; margin: 16px 0 8px; }
+.tryon-panel .tryon-grp-label:first-child { margin-top: 0; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.mini-chip { font-family: var(--f-body); font-size: 13px; color: var(--c-muted); background: var(--c-surface); border: 1px solid var(--c-border); padding: 8px 13px; cursor: pointer; transition: color .2s, background .2s, border-color .2s; }
+.mini-chip:hover { border-color: var(--c-accent); color: var(--c-text); }
+.mini-chip.active { color: var(--c-bg); background: var(--c-accent); border-color: var(--c-accent); }
+.tryon-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
+.tryon-actions .tryon-cta { align-self: stretch; margin-bottom: 0; text-align: center; }
+.tryon-btn2 { font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--c-text); background: transparent; border: 1px solid var(--c-border); padding: 13px; cursor: pointer; transition: border-color .2s, color .2s; }
+.tryon-btn2:hover { border-color: var(--c-accent); color: var(--c-accent); }
+.stylist-order { margin-top: 32px; background: var(--c-surface); border: 1px solid var(--c-border); padding: 28px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 32px; align-items: end; }
+.so-label { display: block; margin-bottom: 16px; color: var(--c-accent); }
+.so-upload { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--c-text); background: var(--c-mid); border: 1px dashed var(--c-border); padding: 14px 18px; width: 100%; margin-bottom: 18px; cursor: pointer; transition: border-color .2s; }
+.so-upload:hover { border-color: var(--c-accent); }
+.so-group { margin-bottom: 14px; }
+.so-grp-label { display: block; margin-bottom: 8px; }
+.so-summary { font-family: var(--f-body); font-size: 14px; color: var(--c-muted); margin-bottom: 12px; }
+.so-cta { font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--c-bg); background: var(--c-accent); border: none; padding: 16px; width: 100%; cursor: pointer; transition: background .2s; }
+.so-cta:hover { background: var(--c-white); }
+.so-order .ai-soon { display: inline-block; margin-top: 12px; }
+.concierge-extra { margin-top: 24px; }
+.ce-label { display: block; margin-bottom: 14px; }
+.ce-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--c-border); border: 1px solid var(--c-border); }
+.ce-item { background: var(--c-surface); padding: 22px 20px; }
+.ce-t { font-family: var(--f-body); font-size: 15px; color: var(--c-white); margin-bottom: 6px; display: flex; align-items: center; gap: 9px; }
+.ce-t svg { width: 18px; height: 18px; color: var(--c-accent); flex-shrink: 0; }
+.ce-d { font-family: var(--f-body); font-size: 12.5px; color: var(--c-muted); line-height: 1.5; }
+@media (max-width: 760px) { .stylist-order { grid-template-columns: 1fr; gap: 22px; padding: 22px; } .ce-row { grid-template-columns: 1fr; } }
 .ai-lookbook { position: relative; background: radial-gradient(120% 95% at 50% 16%, var(--c-surface), var(--c-deep)); border: 1px solid var(--c-border); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 380px; }
 .ai-lookbook .lookbook-img { width: 100%; max-width: 340px; height: auto; border-radius: 8px; border: 1px solid var(--c-border); display: block; }
 .lookbook-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--c-accent); margin-top: 16px; }
@@ -1368,16 +1398,32 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
       <div class="tryon-readout">ФОРМА ЛИЦА · <b>Овальная</b><br>ПОДОБРАНО · <b>4 стиля</b></div>
     </div>
     <div class="tryon-panel reveal reveal-delay-1">
-      <div class="tryon-sub">Выбери стиль — ИИ примерит</div>
+      <span class="tryon-grp-label">Стрижка</span>
       <div class="style-chips" id="styleChips">
         <div class="style-chip active" data-style="fade"><span class="sc-name">Фейд</span><span class="sc-match">96%</span></div>
         <div class="style-chip" data-style="undercut"><span class="sc-name">Андеркат</span><span class="sc-match">92%</span></div>
         <div class="style-chip" data-style="pompadour"><span class="sc-name">Помпадур</span><span class="sc-match">88%</span></div>
         <div class="style-chip" data-style="crop"><span class="sc-name">Кроп</span><span class="sc-match">90%</span></div>
       </div>
-      <div class="beard-toggle active" id="beardToggle"><span class="bt-box">✓</span>Борода</div>
+      <span class="tryon-grp-label">Борода</span>
+      <div class="chip-row" data-group="beard">
+        <div class="mini-chip active" data-beard="short">Короткая</div>
+        <div class="mini-chip" data-beard="goatee">Эспаньолка</div>
+        <div class="mini-chip" data-beard="ducktail">Ducktail</div>
+        <div class="mini-chip" data-beard="none">Без бороды</div>
+      </div>
+      <span class="tryon-grp-label">Цвет · седина</span>
+      <div class="chip-row" data-group="color">
+        <div class="mini-chip active">Натуральный</div>
+        <div class="mini-chip">Камуфляж седины</div>
+        <div class="mini-chip">Тонирование</div>
+      </div>
       <div class="tryon-result">Текущий образ: <b id="tryonResult">Фейд + борода</b></div>
-      <button class="tryon-cta" id="tryonCta">Попробовать в приложении</button>
+      <div class="tryon-actions">
+        <button class="tryon-cta" id="tryonCta">Попробовать в приложении</button>
+        <button class="tryon-btn2" id="tryonSave">Сохранить образ</button>
+        <button class="tryon-btn2" id="tryonBook">Записаться на этот образ</button>
+      </div>
       <span class="ai-soon">Скоро в приложении</span>
     </div>
   </div>
@@ -1670,6 +1716,35 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
         <div class="ai-f-title">Доставка домой</div>
         <div class="ai-f-desc">Всё необходимое привозим к двери</div>
       </div>
+    </div>
+  </div>
+  <div class="stylist-order reveal">
+    <div>
+      <span class="so-label">Как это работает</span>
+      <button class="so-upload" id="soUpload">📷 Загрузить своё фото</button>
+      <div class="so-group"><span class="so-grp-label">Повод</span>
+        <div class="chip-row" data-group="occasion">
+          <div class="mini-chip active">Свидание</div><div class="mini-chip">Работа</div><div class="mini-chip">Выход в свет</div><div class="mini-chip">Каждый день</div>
+        </div>
+      </div>
+      <div class="so-group"><span class="so-grp-label">Бюджет</span>
+        <div class="chip-row" data-group="budget">
+          <div class="mini-chip">Эконом</div><div class="mini-chip active">Средний</div><div class="mini-chip">Премиум</div>
+        </div>
+      </div>
+    </div>
+    <div class="so-order">
+      <div class="so-summary">В образе: 6 позиций · ориентир от 45 000 ₸</div>
+      <button class="so-cta" id="soCta">Заказать весь образ с доставкой</button>
+      <span class="ai-soon">Скоро в приложении</span>
+    </div>
+  </div>
+  <div class="concierge-extra reveal">
+    <span class="ce-label">И в день визита — консьерж:</span>
+    <div class="ce-row">
+      <div class="ce-item"><div class="ce-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 10c0 6-8 11-8 11s-8-5-8-11a8 8 0 0116 0z"/><circle cx="12" cy="10" r="2.5"/></svg>Маршрут и такси</div><div class="ce-d">Время в пути и вызов машины к записи</div></div>
+      <div class="ce-item"><div class="ce-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.5 21a2 2 0 01-3 0"/></svg>Напоминания</div><div class="ce-d">Подскажет, когда пора, по твоему циклу</div></div>
+      <div class="ce-item"><div class="ce-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>Брифинг мастера</div><div class="ce-d">История визитов — мастер знает всё заранее</div></div>
     </div>
   </div>
 </section>
@@ -2071,33 +2146,36 @@ if (typeof submit !== 'undefined' && submit){
 if (riderCta){ riderCta.addEventListener('click', () => toast('Райдер сохранён — мастер увидит его до вашего прихода.')); }
 /* Subscription plan CTAs */
 document.querySelectorAll('.plan-cta').forEach(b => b.addEventListener('click', () => toast('Оформление подписки — в приложении GRAVIX.')));
-/* AI try-on teaser */
+/* AI try-on + stylist controls */
 (function(){
   const stage = document.getElementById('tryonStage');
-  const hair = stage && stage.querySelector('.tryon-hair');
-  const chips = document.getElementById('styleChips');
-  const beard = document.getElementById('beardToggle');
   const resultEl = document.getElementById('tryonResult');
-  if (!stage || !chips || !resultEl) return;
   const names = { fade:'Фейд', undercut:'Андеркат', pompadour:'Помпадур', crop:'Кроп' };
   let cur = 'fade';
-  function update(){ resultEl.textContent = names[cur] + (stage.classList.contains('with-beard') ? ' + борода' : ''); }
-  chips.querySelectorAll('.style-chip').forEach(chip => chip.addEventListener('click', () => {
-    chips.querySelectorAll('.style-chip').forEach(c => c.classList.remove('active'));
-    chip.classList.add('active');
-    cur = chip.getAttribute('data-style');
-    if (hair) hair.setAttribute('data-style', cur);
-    update();
-  }));
-  if (beard) beard.addEventListener('click', () => {
-    const on = !beard.classList.contains('active');
-    beard.classList.toggle('active', on);
-    stage.classList.toggle('with-beard', on);
-    beard.querySelector('.bt-box').textContent = on ? '✓' : '';
-    update();
+  let upd = function(){};
+  if (stage && resultEl) {
+    const hair = stage.querySelector('.tryon-hair');
+    const chips = document.getElementById('styleChips');
+    upd = function(){ resultEl.textContent = names[cur] + (stage.classList.contains('with-beard') ? ' + борода' : ''); };
+    if (chips) chips.querySelectorAll('.style-chip').forEach(chip => chip.addEventListener('click', () => {
+      chips.querySelectorAll('.style-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active'); cur = chip.getAttribute('data-style');
+      if (hair) hair.setAttribute('data-style', cur); upd();
+    }));
+  }
+  document.querySelectorAll('.chip-row').forEach(row => {
+    row.querySelectorAll('.mini-chip').forEach(mc => mc.addEventListener('click', () => {
+      row.querySelectorAll('.mini-chip').forEach(o => o.classList.remove('active'));
+      mc.classList.add('active');
+      if (row.getAttribute('data-group') === 'beard' && stage) { stage.classList.toggle('with-beard', mc.getAttribute('data-beard') !== 'none'); upd(); }
+    }));
   });
-  const cta = document.getElementById('tryonCta');
-  if (cta) cta.addEventListener('click', () => toast('AI-примерочная — скоро в приложении GRAVIX.'));
+  const bind = (id, msg) => { const el = document.getElementById(id); if (el) el.addEventListener('click', () => toast(msg)); };
+  bind('tryonCta', 'AI-примерочная — скоро в приложении GRAVIX.');
+  bind('tryonSave', 'Образ сохранён в профиль — скоро в приложении.');
+  bind('tryonBook', 'Запись на этот образ — скоро в приложении.');
+  bind('soUpload', 'Загрузка фото — скоро в приложении GRAVIX.');
+  bind('soCta', 'Заказ образа с доставкой — скоро в приложении.');
 })();
 
 /* Magnetic interactive elements (buttons + logo already handled) */
