@@ -1008,7 +1008,7 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
 @media (max-width: 900px) { .ai-grid { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .ai-features { grid-template-columns: 1fr; } }
 .ai-lookbook { position: relative; background: radial-gradient(120% 95% at 50% 16%, var(--c-surface), var(--c-deep)); border: 1px solid var(--c-border); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 380px; }
-.ai-lookbook .lookbook-fig { width: 62%; max-width: 210px; height: auto; display: block; }
+.ai-lookbook .lookbook-img { width: 100%; max-width: 300px; height: auto; border-radius: 8px; border: 1px solid var(--c-border); display: block; }
 .lookbook-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--c-accent); margin-top: 16px; }
 
 /* MOBILE STICKY CTA */
@@ -1626,31 +1626,7 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
   </div>
   <div class="ai-grid">
     <div class="ai-lookbook reveal">
-      <svg class="lookbook-fig" viewBox="0 0 260 430" fill="none" aria-hidden="true">
-        <ellipse cx="130" cy="409" rx="62" ry="9" fill="#05120e" opacity=".5"/>
-        <path d="M106 240 H154 L150 384 H135 L130 266 L125 384 H110 Z" fill="#B59B6A"/>
-        <path d="M106 240 H154 V252 H106 Z" fill="#A98C57"/>
-        <path d="M110 384 H135 V393 H98 C98 386 102 384 110 384 Z" fill="#E7E2D6"/>
-        <path d="M125 384 H150 C158 384 162 386 162 393 H125 Z" fill="#E7E2D6"/>
-        <path d="M98 393 H162 V397 H98 Z" fill="#0A1C17"/>
-        <path d="M82 150 L66 232 L82 238 L96 162 Z" fill="#0C4439"/>
-        <path d="M178 150 L194 232 L178 238 L164 162 Z" fill="#0C4439"/>
-        <path d="M82 150 C82 129 99 118 130 118 C161 118 178 129 178 150 L172 244 H88 Z" fill="#0F4D40"/>
-        <path d="M106 118 C106 136 120 146 130 146 C140 146 154 136 154 118 C144 112 116 112 106 118 Z" fill="#0A3A30"/>
-        <path d="M106 194 H154 V224 H106 Z" fill="#0B3E33"/>
-        <path d="M122 148 V178 M138 148 V178" stroke="#C49C5E" stroke-width="2.2"/>
-        <circle cx="122" cy="180" r="2.6" fill="#C49C5E"/><circle cx="138" cy="180" r="2.6" fill="#C49C5E"/>
-        <rect x="171" y="224" width="11" height="14" rx="3" fill="none" stroke="#C49C5E" stroke-width="3"/>
-        <rect x="122" y="101" width="16" height="20" fill="#CDBA9C"/>
-        <ellipse cx="130" cy="74" rx="26" ry="31" fill="#CDBA9C"/>
-        <circle cx="105" cy="76" r="5" fill="#CDBA9C"/><circle cx="155" cy="76" r="5" fill="#CDBA9C"/>
-        <path d="M104 60 C108 35 120 26 130 26 C140 26 152 35 156 60 C156 60 148 47 130 47 C112 47 104 60 104 60 Z" fill="#0A1C17"/>
-        <path d="M110 82 C114 101 122 107 130 107 C138 107 146 101 150 82 C150 82 140 93 130 93 C120 93 110 82 110 82 Z" fill="#0A1C17" opacity=".9"/>
-        <rect x="110" y="69" width="14" height="7.5" rx="2.5" fill="#0A1C17"/>
-        <rect x="136" y="69" width="14" height="7.5" rx="2.5" fill="#0A1C17"/>
-        <path d="M124 72 H136" stroke="#0A1C17" stroke-width="2"/>
-        <path d="M14 16 h16 M14 16 v16 M246 16 h-16 M246 16 v16 M14 414 h16 M14 414 v-16 M246 414 h-16 M246 414 v-16" stroke="#C49C5E" stroke-width="1.4" opacity=".65"/>
-      </svg>
+      <img class="lookbook-img" src="assets/look-1.jpg" alt="Образ от ИИ-стилиста GRAVIX" loading="lazy">
       <div class="lookbook-label">Собранный образ</div>
     </div>
     <div class="ai-features">
