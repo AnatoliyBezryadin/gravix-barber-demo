@@ -1037,6 +1037,20 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
 .ce-t svg { width: 18px; height: 18px; color: var(--c-accent); flex-shrink: 0; }
 .ce-d { font-family: var(--f-body); font-size: 12.5px; color: var(--c-muted); line-height: 1.5; }
 @media (max-width: 760px) { .stylist-order { grid-template-columns: 1fr; gap: 22px; padding: 22px; } .ce-row { grid-template-columns: 1fr; } }
+.gx-extra { margin-top: 56px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 44px; align-items: start; }
+.gx-x-label { font-family: var(--f-mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--c-accent); display: block; margin-bottom: 14px; }
+.gx-ref-body { font-family: var(--f-body); font-size: 14px; color: var(--c-muted); line-height: 1.7; }
+@media (max-width: 760px) { .gx-extra { grid-template-columns: 1fr; gap: 28px; margin-top: 40px; } }
+.form-dates { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.form-date { font-family: var(--f-mono); font-size: 12px; color: var(--c-muted); border: 1px solid var(--c-border); padding: 9px 13px; cursor: pointer; transition: all .2s; user-select: none; }
+.form-date:hover, .form-date.active { color: var(--c-bg); background: var(--c-accent); border-color: var(--c-accent); }
+.reviews-foot { margin-top: 52px; padding-top: 32px; border-top: 1px solid var(--c-border); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.reviews-foot-text { font-family: var(--f-body); font-size: 14px; color: var(--c-muted); line-height: 1.6; }
+.cert-nominal-pick { margin: 26px 0; }
+.cert-pick-label { display: block; font-family: var(--f-mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--c-accent); margin-bottom: 12px; }
+.cert-nominals { flex-wrap: wrap; }
+.master-book { display: inline-block; margin-top: 6px; font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--c-accent); text-decoration: none; opacity: .82; transition: opacity .2s; }
+.master-book:hover { opacity: 1; }
 .ai-lookbook { position: relative; background: radial-gradient(120% 95% at 50% 16%, var(--c-surface), var(--c-deep)); border: 1px solid var(--c-border); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 380px; }
 .ai-lookbook .lookbook-img { width: 100%; max-width: 340px; height: auto; border-radius: 8px; border: 1px solid var(--c-border); display: block; }
 .lookbook-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--c-accent); margin-top: 16px; }
@@ -1531,6 +1545,18 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
       <div class="level-gx">+15%<span>к каждому визиту</span></div>
     </div>
   </div>
+  <div class="gx-extra reveal">
+    <div class="gx-spend">
+      <span class="gx-x-label">Куда тратить гравиксы</span>
+      <div class="chip-row" data-group="spend">
+        <div class="mini-chip active">Оплатить услугу</div><div class="mini-chip">Подарочный сертификат</div><div class="mini-chip">Мерч GRAVIX</div><div class="mini-chip">Апгрейд в VIP-зону</div>
+      </div>
+    </div>
+    <div class="gx-ref">
+      <span class="gx-x-label">Реферальная программа</span>
+      <div class="gx-ref-body">Приведи друга — +500 гравиксов получаете оба. Делись своим кодом из приложения.</div>
+    </div>
+  </div>
 </section>
 
 <!-- SUBSCRIPTION — GRAVIX UNLIMITED -->
@@ -1605,6 +1631,12 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
       <h2 class="section-title">ПОДАРОК,<br>КОТОРЫЙ ИМЕЕТ<br><em>НАСТОЯЩИЙ ВЕС</em></h2>
       <p class="cert-desc">Этот сертификат дарит право на перезагрузку стиля. Забудь о суете — в кресле GRAVIX действуют другие законы. Здесь правит гравитация мастерства, а стрелка компаса всегда указывает на лучший образ.</p>
       <p class="cert-desc cert-desc-accent">Лови момент — и позволь себе быть в центре притяжения.</p>
+      <div class="cert-nominal-pick">
+        <span class="cert-pick-label">Выберите номинал</span>
+        <div class="chip-row cert-nominals" data-group="nominal" data-i18n-skip>
+          <div class="mini-chip">5 000 ₸</div><div class="mini-chip active">10 000 ₸</div><div class="mini-chip">25 000 ₸</div><div class="mini-chip">50 000 ₸</div>
+        </div>
+      </div>
       <a href="#booking" class="btn-primary">Подарить сертификат</a>
     </div>
   </div>
@@ -1621,6 +1653,9 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
         <div class="app-feature reveal reveal-delay-1"><div class="feature-num">02</div><div><div class="feature-title">История стрижек</div><div class="feature-desc">Фото и комментарии каждого визита. «Сделайте как обычно» — больше не нужно.</div></div></div>
         <div class="app-feature reveal reveal-delay-2"><div class="feature-num">03</div><div><div class="feature-title">Гравиксы и статусы</div><div class="feature-desc">Накапливайте валюту бренда, растите в уровне, открывайте привилегии.</div></div></div>
         <div class="app-feature reveal reveal-delay-3"><div class="feature-num">04</div><div><div class="feature-title">Ваш райдер</div><div class="feature-desc">Предпочтения хранятся в системе. Команда видит их до вашего прихода.</div></div></div>
+        <div class="app-feature reveal"><div class="feature-num">05</div><div><div class="feature-title">Подарочные сертификаты</div><div class="feature-desc">Дарите и получайте сертификаты, активируйте при записи.</div></div></div>
+        <div class="app-feature reveal reveal-delay-1"><div class="feature-num">06</div><div><div class="feature-title">Реферальная программа</div><div class="feature-desc">Приведи друга — гравиксы получаете оба.</div></div></div>
+        <div class="app-feature reveal reveal-delay-2"><div class="feature-num">07</div><div><div class="feature-title">Умные напоминания</div><div class="feature-desc">Подскажем, когда пора, и вернём бонусом.</div></div></div>
       </div>
       <div class="app-store-row reveal reveal-delay-2">
         <a href="https://gravixbarber.kz" class="store-btn" target="_blank" rel="noopener" aria-label="Скачать в App Store"><svg viewBox="0 0 24 24"><path d="M17.05 12.04c-.02-2.05 1.68-3.04 1.75-3.09-.95-1.39-2.43-1.58-2.96-1.6-1.26-.13-2.46.74-3.1.74-.64 0-1.62-.72-2.67-.7-1.37.02-2.64.8-3.34 2.03-1.42 2.47-.36 6.12 1.02 8.12.68.98 1.49 2.08 2.55 2.04 1.02-.04 1.41-.66 2.65-.66 1.23 0 1.59.66 2.67.64 1.1-.02 1.8-1 2.48-1.98.78-1.14 1.1-2.24 1.12-2.3-.02-.01-2.15-.83-2.17-3.28zM15.1 5.62c.56-.68.94-1.62.84-2.56-.81.03-1.79.54-2.37 1.22-.52.6-.97 1.56-.85 2.48.9.07 1.82-.46 2.38-1.14z"/></svg><div class="store-btn-text"><div class="store-btn-small">Скачать в</div><div class="store-btn-big">App Store</div></div></a>
@@ -1754,11 +1789,11 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
   <div class="section-label reveal">Команда</div>
   <h2 class="section-title reveal">МАСТЕРА<br>GRAVIX</h2>
   <div class="masters-row">
-    <div class="master-card reveal reveal-delay-1"><div class="master-photo"><img loading="lazy" decoding="async" width="400" height="400" src="assets/master-1.png" alt="Мастер Назик Азамат Жумагулов"></div><div class="master-name">Назик</div><div class="master-spec">Старший мастер</div></div>
-    <div class="master-card reveal reveal-delay-2"><div class="master-photo"><img loading="lazy" decoding="async" width="400" height="400" src="assets/master-2.png" alt="Мастер Саша Сундет Мекебай"></div><div class="master-name">Саша</div><div class="master-spec">Мастер-стилист</div></div>
-    <div class="master-card reveal reveal-delay-3"><div class="master-photo"><img loading="lazy" decoding="async" width="400" height="400" src="assets/master-3.png" alt="Мастер Жанель Берат Кошербай"></div><div class="master-name">Жанель</div><div class="master-spec">Барбер</div></div>
-    <div class="master-card reveal reveal-delay-4"><div class="master-photo"><img loading="lazy" decoding="async" width="400" height="400" src="assets/master-4.png" alt="Мастер Асетхан Едигеев"></div><div class="master-name">Асетхан</div><div class="master-spec">Барбер</div></div>
-    <div class="master-card reveal reveal-delay-4"><div class="master-photo"><img loading="lazy" decoding="async" width="400" height="400" src="assets/master-5.png" alt="Мастер Раушан Болатбек"></div><div class="master-name">Раушан</div><div class="master-spec">Мастер по уходу</div></div>
+    <div class="master-card reveal reveal-delay-1"><div class="master-photo"><img loading="lazy" decoding="async" width="400" height="400" src="assets/master-1.png" alt="Мастер Назик Азамат Жумагулов"></div><div class="master-name">Назик</div><a href="#booking" class="master-book" data-val="Записаться">Записаться</a><div class="master-spec">Старший мастер</div></div>
+    <div class="master-card reveal reveal-delay-2"><div class="master-photo"><img loading="lazy" decoding="async" width="400" height="400" src="assets/master-2.png" alt="Мастер Саша Сундет Мекебай"></div><div class="master-name">Саша</div><a href="#booking" class="master-book" data-val="Записаться">Записаться</a><div class="master-spec">Мастер-стилист</div></div>
+    <div class="master-card reveal reveal-delay-3"><div class="master-photo"><img loading="lazy" decoding="async" width="400" height="400" src="assets/master-3.png" alt="Мастер Жанель Берат Кошербай"></div><div class="master-name">Жанель</div><a href="#booking" class="master-book" data-val="Записаться">Записаться</a><div class="master-spec">Барбер</div></div>
+    <div class="master-card reveal reveal-delay-4"><div class="master-photo"><img loading="lazy" decoding="async" width="400" height="400" src="assets/master-4.png" alt="Мастер Асетхан Едигеев"></div><div class="master-name">Асетхан</div><a href="#booking" class="master-book" data-val="Записаться">Записаться</a><div class="master-spec">Барбер</div></div>
+    <div class="master-card reveal reveal-delay-4"><div class="master-photo"><img loading="lazy" decoding="async" width="400" height="400" src="assets/master-5.png" alt="Мастер Раушан Болатбек"></div><div class="master-name">Раушан</div><a href="#booking" class="master-book" data-val="Записаться">Записаться</a><div class="master-spec">Мастер по уходу</div></div>
   </div>
 </section>
 
@@ -1798,6 +1833,10 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
       <p class="review-text">Водил сына на детскую стрижку — без спешки, спокойно. Записал в райдере, что он стесняется, и мастер всё учёл. Вернёмся.</p>
       <div class="review-author"><div class="review-avatar">Е</div><div><div class="review-name">Ержан М.</div><div class="review-meta">IRON · 3 визита</div></div></div>
     </div>
+  </div>
+  <div class="reviews-foot reveal">
+    <span class="reviews-foot-text">Были у нас? Оставьте отзыв и получите +100 гравиксов в приложении.</span>
+    <a href="#app" class="btn-ghost">Оставить отзыв</a>
   </div>
 </section>
 
@@ -1858,7 +1897,10 @@ body.menu-open .mobile-menu a:nth-child(6) { animation-delay: .38s; }
         </div>
       </div>
       <div class="form-step">
-        <div class="form-step-label"><span class="form-step-num">3</span>Время · сегодня</div>
+        <div class="form-step-label"><span class="form-step-num">3</span>Дата и время</div>
+        <div class="form-dates" data-group="date">
+          <div class="form-date active">Сегодня</div><div class="form-date">Завтра</div><div class="form-date">Послезавтра</div><div class="form-date">📅 Выбрать дату</div>
+        </div>
         <div class="form-times" data-group="time">
           <div class="form-time taken">10:00</div>
           <div class="form-time">11:30</div>
@@ -2038,7 +2080,20 @@ document.querySelectorAll('.form-time').forEach(t => {
     t.classList.add('active'); sums.time = t.textContent; updateSummary();
   });
 });
-const submit = document.getElementById('formSubmit');
+document.querySelectorAll('.form-date').forEach(d => {
+   d.addEventListener('click', () => {
+     document.querySelectorAll('.form-date').forEach(o => o.classList.remove('active'));
+     d.classList.add('active');
+   });
+ });
+ document.querySelectorAll('.cert-nominals .mini-chip').forEach(c => {
+   c.addEventListener('click', () => {
+     const amt = c.textContent.replace('\u20b8','').trim();
+     const disp = document.querySelector('.cert-nominal');
+     if (disp) disp.innerHTML = amt + ' <span>\u20b8</span>';
+   });
+ });
+ const submit = document.getElementById('formSubmit');
 submit.addEventListener('click', function(){ this.textContent = GXt('Открываю WhatsApp ✓'); this.style.background = '#3a6b2a'; setTimeout(()=>{ this.textContent=GXt('Подтвердить запись'); this.style.background=''; }, 2600); });
 
 document.querySelectorAll('.faq-q').forEach(q => {
